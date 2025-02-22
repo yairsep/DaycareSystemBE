@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
-const cors = require('cors');
-
-app.use(cors())
+// const cors = require('cors');
+//
+// app.use(cors())
 
 app.get('/', (req, res) => {
     console.log("Request from React app2");
@@ -14,7 +14,7 @@ app.post("/post", (req, res) => {
     res.redirect("/");
 });
 
-const port = process.env.PORT || 8080; // You can use environment variables for port configuration
+const port =  8080; // You can use environment variables for port configuration
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
