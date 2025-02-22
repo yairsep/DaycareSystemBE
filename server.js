@@ -1,19 +1,20 @@
-const http = require('http');
+const express = require('express');
+const app = express();
+const cors = require('cors');
 
-// Create an HTTP server
-const server = http.createServer((req, res) => {
-    // Set the response headers
-    res.writeHead(200, { 'Content-Type': 'text/html' });
+app.use(cors())
 
-    // Write the response content
-    res.write('<h1>Hello, Node.js HTTP Server!</h1>');
-    res.end();
+app.get('/', (req, res) => {
+    console.log("Request from React app2");
+    res.send("Hello, Express.js Server!!");
 });
 
-// Specify the port to listen on
-const port = 3001;
+app.post("/post", (req, res) => {
+    console.log("Connected to React");
+    res.redirect("/");
+});
 
-// Start the server
-server.listen(port, () => {
-    console.log(`Node.js HTTP server is running on port ${port}`);
+const port = process.env.PORT || 8080; // You can use environment variables for port configuration
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
