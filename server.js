@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
-const cors = require('cors');
-
-app.use(cors())
+// const cors = require('cors');
+//
+// app.use(cors())
 
 app.get('/', (req, res) => {
     console.log("Request from React app2");
