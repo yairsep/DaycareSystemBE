@@ -15,6 +15,11 @@ app.get('/api', (req, res) => {
     res.send("Hello from /api route!");
 });
 
+app.get('/test', (req, res) => {
+    console.log("Request to api route");
+    res.send("Hello from /api route!");
+});
+
 // You can use environment variables for port configuration
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
